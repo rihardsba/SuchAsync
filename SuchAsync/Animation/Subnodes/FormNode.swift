@@ -17,7 +17,7 @@ class FormNode: ASDisplayNode {
 
     let titleNode: ASTextNode = {
         let node = ASTextNode()
-        node.borderColor = UIColor.black.cgColor
+        node.borderColor = UIColor.lightGray.withAlphaComponent(0.2).cgColor
         node.borderWidth = 1
         node.cornerRadius = 12
         node.attributedText = "Title Text".styled(with: .titleText)
@@ -44,15 +44,16 @@ class FormNode: ASDisplayNode {
 
     let actionButtonNode: ASButtonNode = {
         let node = ASButtonNode()
-        node.backgroundColor = .lightGray
-        node.setAttributedTitle("Some button".styled(with: .barButtonDefault), for: .normal)
+        node.cornerRadius = 12
+        node.backgroundColor = UIColor.lightGray.withAlphaComponent(0.6)
+        node.setAttributedTitle("Some button".styled(with: .animButtonText), for: .normal)
         return node
     }()
 
     override init() {
         super.init()
 
-        borderColor = UIColor.black.cgColor
+        borderColor = UIColor.lightGray.withAlphaComponent(0.2).cgColor
         borderWidth = 1
         cornerRadius = 5
 
@@ -66,8 +67,6 @@ class FormNode: ASDisplayNode {
 
         toggleAnimation()
     }
-
-
 
     override func animateLayoutTransition(_ context: ASContextTransitioning) {
         // Default animation scenario is in place, but overriding this function allows to implement custom animations
@@ -102,7 +101,7 @@ class FormNode: ASDisplayNode {
 
         let formStack = ASStackLayoutSpec(direction: .horizontal, spacing: 5, justifyContent: .center, alignItems: .stretch, children: [imageNode, titleStack])
 
-        actionButtonNode.style.height = ASDimensionMake(expanded ? 44 : 0)
+        actionButtonNode.style.height = ASDimensionMake(expanded ? 32 : 0)
         descriptionNode.style.height = ASDimensionMake(expanded ? 90 : 0)
 
         let descriptionInsets = ASInsetLayoutSpec(insets: UIEdgeInsets(top: 10, left: 49, bottom: 0, right: 0), child: descriptionNode)

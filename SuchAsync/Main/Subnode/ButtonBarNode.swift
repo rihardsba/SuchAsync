@@ -24,7 +24,7 @@ class ActionButtonNode: ASButtonNode {
 
     override var isSelected: Bool {
         didSet {
-            backgroundColor = isSelected ? .darkGray : .clear
+            backgroundColor = isSelected ? UIColor.lightGray.withAlphaComponent(0.6) : .clear
         }
     }
 }

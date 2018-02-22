@@ -45,7 +45,7 @@ extension StringStyle {
         return StringStyle(
             .alignment(.center),
             .font(UIFont.boldSystemFont(ofSize: 24)),
-            .color(.black)
+            .color(.darkGray)
         )
     }
 
@@ -62,6 +62,14 @@ extension StringStyle {
             .alignment(.center),
             .font(UIFont.systemFont(ofSize: 14)),
             .color(.black)
+        )
+    }
+
+    static var animButtonText: StringStyle {
+        return StringStyle(
+            .alignment(.center),
+            .font(UIFont.boldSystemFont(ofSize: 18)),
+            .color(.white)
         )
     }
 }
