@@ -40,6 +40,30 @@ extension StringStyle {
             .color(.black)
         )
     }
+
+    static var titleText: StringStyle {
+        return StringStyle(
+            .alignment(.center),
+            .font(UIFont.boldSystemFont(ofSize: 24)),
+            .color(.black)
+        )
+    }
+
+    static var subtitleText: StringStyle {
+        return StringStyle(
+            .alignment(.center),
+            .font(UIFont.systemFont(ofSize: 18)),
+            .color(.black)
+        )
+    }
+
+    static var descriptionText: StringStyle {
+        return StringStyle(
+            .alignment(.center),
+            .font(UIFont.systemFont(ofSize: 14)),
+            .color(.black)
+        )
+    }
 }
 
 extension Collection {

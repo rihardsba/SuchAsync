@@ -14,7 +14,7 @@ class ViewControllerNode: ASDisplayNode {
     let buttonNode: ASButtonNode = {
         let node = ASButtonNode()
         node.cornerRadius = 15
-        node.setAttributedTitle("Button".styled(with: .barButtonSelected), for: .normal)
+        node.setAttributedTitle("Animations >".styled(with: .barButtonSelected), for: .normal)
         node.backgroundColor = .black
         node.style.preferredSize = CGSize(width: 100, height: 50)
         return node
@@ -22,7 +22,7 @@ class ViewControllerNode: ASDisplayNode {
 
     let photoNode: ASImageNode = {
         let node = ASImageNode()
-        node.image = #imageLiteral(resourceName: "asynckit.png")
+        node.image = #imageLiteral(resourceName: "ico-async-image")
         node.style.preferredSize = CGSize(width: 200, height: 100)
         return node
     }()
@@ -56,7 +56,6 @@ class ViewControllerNode: ASDisplayNode {
         addSubnode(buttonNode)
         addSubnode(buttonBarNode)
         addSubnode(photoNode)
-        addSubnode(searchBarNode)
     }
 
     override func layoutSpecThatFits(_ constrainedSize: ASSizeRange) -> ASLayoutSpec {
@@ -69,16 +68,9 @@ class ViewControllerNode: ASDisplayNode {
         stack.style.width = ASDimensionMake(constrainedSize.max.width)
         let stackInsets = ASInsetLayoutSpec(insets: UIEdgeInsets(top: 15, left: 0, bottom: 0, right: 0), child: stack)
 
-        // Nothing wrong with settings height/width/both here as well.
-        searchBarNode.style.height = ASDimensionMake(44)
-        let barInsets = ASInsetLayoutSpec(insets: .zero, child: searchBarNode)
-
-        // The first two elements wrapped in a stack to have them act as a group when performing layout.
-        let barStack = ASStackLayoutSpec(direction: .vertical, spacing: 0, justifyContent: .start, alignItems: .start, children: [stackInsets, barInsets])
-
         let buttonInsets = ASInsetLayoutSpec(insets: UIEdgeInsets(top: 0, left: 0, bottom: 15, right: 0), child: buttonNode)
 
         // And every element is wrapped in a global vertical stack.
-        return ASStackLayoutSpec(direction: .vertical, spacing: 0, justifyContent: .spaceBetween, alignItems: .center, children: [barStack, photoNode, buttonInsets])
+        return ASStackLayoutSpec(direction: .vertical, spacing: 0, justifyContent: .spaceBetween, alignItems: .center, children: [stackInsets, photoNode, buttonInsets])
     }
 }

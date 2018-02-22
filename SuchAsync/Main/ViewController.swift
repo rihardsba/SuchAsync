@@ -19,13 +19,25 @@ class ViewController: ASViewController<ViewControllerNode> {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        // because nodes like to hide under navigation bar
+        edgesForExtendedLayout = []
+
         // Actions can be connected here
         node.buttonNode.addTarget(self, action: #selector(action), forControlEvents: .touchUpInside)
+
         // Same as delegacy, etc
         node.buttonBarNode.delegate = self
     }
 
-    @objc func action() { }
+    @objc func action() {
+        showAnimationController()
+    }
+
+    private func showAnimationController() {
+        let vc = AnimationVC()
+        navigationController?.pushViewController(vc, animated: true)
+    }
 }
 
 extension ViewController: ButtonBarNodeDelegate {

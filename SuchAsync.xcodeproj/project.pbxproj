@@ -14,8 +14,10 @@
 		9F80AE64203C4A62001A0D0D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F80AE62203C4A62001A0D0D /* LaunchScreen.storyboard */; };
 		9F80AE6C203C4CAB001A0D0D /* ViewControllerNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F80AE6B203C4CAB001A0D0D /* ViewControllerNode.swift */; };
 		9F80AE6E203C4D6F001A0D0D /* ButtonBarNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F80AE6D203C4D6F001A0D0D /* ButtonBarNode.swift */; };
-		9F80AE74203C5461001A0D0D /* asynckit.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F80AE73203C5461001A0D0D /* asynckit.png */; };
 		9F80AE77203C59B9001A0D0D /* Help.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F80AE76203C59B9001A0D0D /* Help.swift */; };
+		9F80AE7C203C5F87001A0D0D /* AnimationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F80AE7B203C5F87001A0D0D /* AnimationVC.swift */; };
+		9F80AE7E203C5FA1001A0D0D /* AnimationNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F80AE7D203C5FA1001A0D0D /* AnimationNode.swift */; };
+		9FF63435203D5A59005FBCC3 /* FormNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF63434203D5A59005FBCC3 /* FormNode.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,8 +32,10 @@
 		9F80AE65203C4A62001A0D0D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9F80AE6B203C4CAB001A0D0D /* ViewControllerNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerNode.swift; sourceTree = "<group>"; };
 		9F80AE6D203C4D6F001A0D0D /* ButtonBarNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonBarNode.swift; sourceTree = "<group>"; };
-		9F80AE73203C5461001A0D0D /* asynckit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = asynckit.png; sourceTree = "<group>"; };
 		9F80AE76203C59B9001A0D0D /* Help.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Help.swift; sourceTree = "<group>"; };
+		9F80AE7B203C5F87001A0D0D /* AnimationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationVC.swift; sourceTree = "<group>"; };
+		9F80AE7D203C5FA1001A0D0D /* AnimationNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationNode.swift; sourceTree = "<group>"; };
+		9FF63434203D5A59005FBCC3 /* FormNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormNode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,12 +80,10 @@
 		9F80AE58203C4A62001A0D0D /* SuchAsync */ = {
 			isa = PBXGroup;
 			children = (
-				9F80AE75203C59AC001A0D0D /* HelperExtensions */,
 				9F80AE59203C4A62001A0D0D /* AppDelegate.swift */,
-				9F80AE5B203C4A62001A0D0D /* ViewController.swift */,
-				9F80AE6B203C4CAB001A0D0D /* ViewControllerNode.swift */,
-				9F80AE6D203C4D6F001A0D0D /* ButtonBarNode.swift */,
-				9F80AE73203C5461001A0D0D /* asynckit.png */,
+				9F80AE75203C59AC001A0D0D /* HelperExtensions */,
+				9F80AE78203C5F39001A0D0D /* Main */,
+				9F80AE7A203C5F53001A0D0D /* Animation */,
 				9F80AE60203C4A62001A0D0D /* Assets.xcassets */,
 				9F80AE62203C4A62001A0D0D /* LaunchScreen.storyboard */,
 				9F80AE65203C4A62001A0D0D /* Info.plist */,
@@ -95,6 +97,42 @@
 				9F80AE76203C59B9001A0D0D /* Help.swift */,
 			);
 			path = HelperExtensions;
+			sourceTree = "<group>";
+		};
+		9F80AE78203C5F39001A0D0D /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				9F80AE79203C5F4A001A0D0D /* Subnode */,
+				9F80AE5B203C4A62001A0D0D /* ViewController.swift */,
+				9F80AE6B203C4CAB001A0D0D /* ViewControllerNode.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		9F80AE79203C5F4A001A0D0D /* Subnode */ = {
+			isa = PBXGroup;
+			children = (
+				9F80AE6D203C4D6F001A0D0D /* ButtonBarNode.swift */,
+			);
+			path = Subnode;
+			sourceTree = "<group>";
+		};
+		9F80AE7A203C5F53001A0D0D /* Animation */ = {
+			isa = PBXGroup;
+			children = (
+				9FF63433203D5A38005FBCC3 /* Subnodes */,
+				9F80AE7B203C5F87001A0D0D /* AnimationVC.swift */,
+				9F80AE7D203C5FA1001A0D0D /* AnimationNode.swift */,
+			);
+			path = Animation;
+			sourceTree = "<group>";
+		};
+		9FF63433203D5A38005FBCC3 /* Subnodes */ = {
+			isa = PBXGroup;
+			children = (
+				9FF63434203D5A59005FBCC3 /* FormNode.swift */,
+			);
+			path = Subnodes;
 			sourceTree = "<group>";
 		};
 		BF5DA4D8AAE79D1C03FC9555 /* Frameworks */ = {
@@ -168,7 +206,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				9F80AE64203C4A62001A0D0D /* LaunchScreen.storyboard in Resources */,
-				9F80AE74203C5461001A0D0D /* asynckit.png in Resources */,
 				9F80AE61203C4A62001A0D0D /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -247,8 +284,11 @@
 				9F80AE77203C59B9001A0D0D /* Help.swift in Sources */,
 				9F80AE5C203C4A62001A0D0D /* ViewController.swift in Sources */,
 				9F80AE6E203C4D6F001A0D0D /* ButtonBarNode.swift in Sources */,
+				9FF63435203D5A59005FBCC3 /* FormNode.swift in Sources */,
+				9F80AE7C203C5F87001A0D0D /* AnimationVC.swift in Sources */,
 				9F80AE5A203C4A62001A0D0D /* AppDelegate.swift in Sources */,
 				9F80AE6C203C4CAB001A0D0D /* ViewControllerNode.swift in Sources */,
+				9F80AE7E203C5FA1001A0D0D /* AnimationNode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
